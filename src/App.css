@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+
+  display: flex;
+  flex-flow: column;
+  background-color: red;
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.App .App-inner-wrapper {
+
+  flex: 1 1 auto;
+  background-color: aquamarine;
+
+  display: flex;
+  flex-flow: column;
+
+  padding: 10px;
+}
+
+.section-wrapper:not(:last-child) {
+
+  margin-bottom: 10px;
+
+}
+
+
+
+.row {
+
+  display: flex;
+  flex-flow: row;
+  
+}
+
+.row.align-center {
+
+  align-items: center;
+
+}
+
+.flex-end {
+
+  align-items: flex-end;
+
+}
+
+.flex-start {
+
+  align-items: flex-start;
+
+}
