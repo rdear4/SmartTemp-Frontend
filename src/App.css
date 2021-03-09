@@ -3,7 +3,7 @@
 
   display: flex;
   flex-flow: column;
-  background-color: red;
+  background-color: rgba(0, 162, 255, 0.384);
   position: absolute;
   margin: 0;
   width: 100%;
@@ -14,7 +14,7 @@
 .App .App-inner-wrapper {
 
   flex: 1 1 auto;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 
   display: flex;
   flex-flow: column;
@@ -22,13 +22,52 @@
   padding: 10px;
 }
 
-.section-wrapper:not(:last-child) {
+.section-wrapper {
 
-  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
 
 }
 
+.section-header {
 
+  display: flex;
+  flex-flow: row;
+  padding: 5px;
+  border-bottom: solid 2px black;
+  margin-bottom: 10px;
+}
+
+.section-header .section-title-wrapper {
+
+  /* background-color: red; */
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.section-content {
+  
+  display: flex;
+  flex-flow: row;
+
+}
+
+.section-wrapper:not(:last-child) {
+
+  margin-bottom: 10px;
+  
+
+}
+
+.col {
+
+  display: flex;
+  flex-flow: column;
+
+}
 
 .row {
 

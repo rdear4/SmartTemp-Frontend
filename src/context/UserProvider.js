@@ -18,16 +18,26 @@ export default function UserProvider(props) {
 
     const initState = {
 
-        sensors: []
+        sensors: [],
+        selectedSensor: -1
 
     }
 
-    const [ userState ] = useState(initState)
+    const [ userState, setUserState ] = useState(initState)
 
     let getSensors = () => {
 
         return axios.get("api/sensors")
     
+    }
+
+    let updateSelectedSensor = (sensorId) => {
+
+        setUserState(prevUserState => ({
+            ...prevUserState,
+            selectedSensor: sensorId
+        }))
+
     }
 
     let getCurrentConditions = () => {
@@ -41,7 +51,8 @@ export default function UserProvider(props) {
             value={{
                 ...userState,
                 getSensors,
-                getCurrentConditions
+                getCurrentConditions,
+                updateSelectedSensor
                 
             }}>
                 { props.children }

@@ -1,49 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { UserContext } from './context/UserProvider'
 
 import Header from './components/header'
 import CurrentConditions from "./components/currentConditions"
+import SensorsList from './components/sensorsList'
 
 import './App.css';
 
 function App() {
 
-  const { getSensors } = useContext(UserContext)
-
-  const [ sensors, setSensors ] = useState([])
-  // const [ selectedSensorIndex, setSelectedSensorIndex ] = useState(-1)
   
-
-  // useEffect(() => {
-
-  //   if (selectedSensorIndex >= 0) {
-  //     console.log("Getting readings for sensor")
-  //   } else {
-  //     console.log("No sensor selected")
-  //   }
-
-  // }, [selectedSensorIndex])
-
-  useEffect(() => {
-    // console.log("Getting all the sensors")
-
-    getSensors()
-    .then(res => {
-      setSensors(res.data)  
-    })
-    .catch(err => {
-        console.log("Error getting sensors from the server")
-        console.log(err)
-    })
-
-    
-
-
-  }, [getSensors])
-
-  
-
-  // console.log(sensors)
   return (
     <div className="App">
 
@@ -52,6 +18,8 @@ function App() {
         <Header />
 
         <CurrentConditions />
+
+        <SensorsList />
 
       </div>
 

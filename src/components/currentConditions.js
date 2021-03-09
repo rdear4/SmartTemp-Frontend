@@ -42,25 +42,30 @@ const CurrentConditions = () => {
 
 
     return (
-        <div className="section-wrapper row align-center current-conditions-wrapper">
-            <div className="card-container flex-end">
-                <div className="card-wrapper">
-                    <div className="card-title-wrapper">
-                        <div className="card-title">Temperature</div>
-                    </div>
-                    <div className="card-data-wrapper">
-                        <div className="card-data">{((temperature * 9.0/5.0) + 32).toFixed(2)} °F</div>
+        <div className="section-wrapper col align-center current-conditions-wrapper">
+            <div className="section-header">
+                <div className="section-title-wrapper">Sensors</div>
+            </div>
+            <div className="section-content">
+                <div className="card-container flex-end">
+                    <div className="card-wrapper">
+                        <div className="card-title-wrapper">
+                            <div className="card-title">Temperature</div>
+                        </div>
+                        <div className="card-data-wrapper">
+                            <div className="card-data">{((temperature * 9.0/5.0) + 32).toFixed(2)} °F</div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="card-container flex-start">
-                <div className="card-wrapper">
-                    <div className="card-title-wrapper">
-                        <div className="card-title">Humidity</div>
-                    </div>
-                    <div className="card-data-wrapper">
-                        <div className="card-data">{humidity} %</div>
+                <div className="card-container flex-start">
+                    <div className="card-wrapper">
+                        <div className="card-title-wrapper">
+                            <div className="card-title">Humidity</div>
+                        </div>
+                        <div className="card-data-wrapper">
+                            <div className="card-data">{humidity} %</div>
+                        </div>
                     </div>
                 </div>
             </div>

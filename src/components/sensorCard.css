@@ -1,0 +1,54 @@
+.sensor-card-wrapper {
+
+    display: flex;
+    flex-flow: column;
+
+    /* width: 100px; */
+    /* height: 150px; */
+
+    /* padding: 10px; */
+
+    /* background-color: dodgerblue; */
+    border: solid 1px black;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+
+.card-selected {
+
+    /* box-shadow: 0px 0px 10px 5px rgb(0, 247, 255); */
+    background-color: rgb(0, 102, 255);
+}
+
+.sensor-card-wrapper .image-wrapper {
+
+    /* background-color: darkgreen; */
+    padding: 10px;
+
+    flex: 1 1 auto;
+
+}
+
+.sensor-card-wrapper .image-wrapper .card-image {
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50px;
+
+    background-color: lawngreen;
+
+}
+
+.sensor-card-wrapper .name-wrapper {
+
+    flex: 1 1 auto;
+
+    padding: 10px;
+
+    font-size: 15px;
+
+    /* background-color: rgb(183, 0, 255); */
+}
