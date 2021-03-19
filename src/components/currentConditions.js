@@ -12,6 +12,8 @@ const CurrentConditions = () => {
     const [ humidity, sethumidity ] = useState(0)
     const [ shouldRefreshCurrent, setShouldRefreshCurrent ] = useState(false)
 
+    const [ error, setError ] = useState("")
+
     useEffect(() => {
 
     // console.log("Timeout")
@@ -28,11 +30,27 @@ const CurrentConditions = () => {
     
     getCurrentConditions()
     .then(res => {
-        // console.log(res.data[0])
+        // console.log(res.data)
         
+        if (res.data.length > 0) {
+            let avg = res.data[0].temperature
+            
+            for (let sensor of res.data) {
+                avg += ((sensor.temperature * (9/5)) + 32)
+                avg /= 2
+            }
+            
+            setTemperature(res.data[0].temperature)
+            sethumidity(res.data[0].humidity)
+
+        } else {
+
+            setTemperature(0)
+            sethumidity(0)
+
+            setError("No sensors are responding with current data")
+        }
         
-        setTemperature(res.data[0].temperature)
-        sethumidity(res.data[0].humidity)
 
         
     })

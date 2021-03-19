@@ -14,7 +14,7 @@
 .App .App-inner-wrapper {
 
   flex: 1 1 auto;
-  /* background-color: aquamarine; */
+  background-color: aquamarine;
 
   display: flex;
   flex-flow: column;

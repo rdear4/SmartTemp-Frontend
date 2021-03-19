@@ -31,6 +31,12 @@ export default function UserProvider(props) {
     
     }
 
+    let getSensorInfo = (sensorId) => {
+
+        return axios.get(`api/sensors/${sensorId}`)
+
+    }
+
     let updateSelectedSensor = (sensorId) => {
 
         setUserState(prevUserState => ({
@@ -38,6 +44,16 @@ export default function UserProvider(props) {
             selectedSensor: sensorId
         }))
 
+    }
+
+    let getAllDataForSensor = (sensorId) => {
+
+        return axios.get(`api/readings/sensor/${sensorId}`)
+    }
+
+    let getRecentDataForSensor = (sensorId) => {
+
+        return axios.get(`api/readings/sensor/${sensorId}?hours=2`)
     }
 
     let getCurrentConditions = () => {
@@ -52,7 +68,10 @@ export default function UserProvider(props) {
                 ...userState,
                 getSensors,
                 getCurrentConditions,
-                updateSelectedSensor
+                updateSelectedSensor,
+                getSensorInfo,
+                getAllDataForSensor,
+                getRecentDataForSensor
                 
             }}>
                 { props.children }

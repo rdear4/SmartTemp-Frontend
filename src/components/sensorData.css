@@ -1,0 +1,33 @@
+.charts-wrapper {
+
+    flex: 1 1 auto;
+    /* background-color: yellowgreen; */
+
+}
+
+.chart-wrapper {
+
+    flex: 1 1 auto;
+
+    /* background-color: tomato; */
+
+    padding: 5px;
+
+    display: flex;
+    flex-flow: column;
+
+    align-items: center;
+
+    border: solid 2px black;
+
+    border-radius: 10px;
+
+}
+
+.chart-wrapper:not(:last-child) {
+
+    margin-bottom: 10px;
+
+    
+
+}
