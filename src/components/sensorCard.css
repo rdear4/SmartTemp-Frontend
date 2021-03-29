@@ -3,7 +3,7 @@
     display: flex;
     flex-flow: column;
 
-    /* width: 100px; */
+    width: 150px;
     /* height: 150px; */
 
     /* padding: 10px; */
@@ -13,6 +13,7 @@
     overflow: hidden;
     border-radius: 20px;
     cursor: pointer;
+    justify-content: center;
 
 }
 
@@ -23,7 +24,7 @@
 .card-selected {
 
     /* box-shadow: 0px 0px 10px 5px rgb(0, 247, 255); */
-    background-color: rgb(0, 102, 255);
+    background-color: rgb(116, 155, 214);
 }
 
 .sensor-card-wrapper .image-wrapper {
@@ -32,6 +33,11 @@
     padding: 10px;
 
     flex: 1 1 auto;
+
+    display: flex;
+    flex-flow: column;
+
+    align-items: center;
 
 }
 
@@ -53,6 +59,9 @@
     padding: 10px;
 
     font-size: 15px;
+
+    color: var(--main-highlight-color);
+    font-weight: bold;
 
     /* background-color: rgb(183, 0, 255); */
 }

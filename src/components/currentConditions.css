@@ -20,7 +20,7 @@
 
 .current-conditions-wrapper .card-container:not(:last-child) {
 
-    border-right: solid 2px black;
+    border-right: solid 2px var(--main-line-color);
 
 }
 
@@ -83,5 +83,7 @@
 .current-conditions-wrapper .card-container .card-wrapper .card-data-wrapper .card-data {
 
     font-size: 90px;
+
+    color: var(--main-highlight-color);
 
 }

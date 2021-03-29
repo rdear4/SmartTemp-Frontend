@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect, useRef } from 'react'
 import Plot from 'react-plotly.js'
 
 import { UserContext } from '../context/UserProvider'
@@ -23,6 +23,8 @@ const SensorData = () => {
     const [ humidityData, setHumidityData ] = useState([])
     const [ dates, setDates ] = useState([])
     const [ shouldRefreshData, setShouldRefreshData ] = useState(false)
+
+    const parentRef = useRef(null)
 
     useEffect(() => {
 
@@ -135,17 +137,31 @@ const SensorData = () => {
                             y: tempData,
                             type: 'scatter',
                             mode: 'lines',
-                            marker: {color: 'red'},
+                            marker: {color: 'white'},
                         }
                         ]}
                         layout={
                             {
                                 yaxis: {
                                     autorange: true,
-                                    type: 'linear'
+                                    type: 'linear',
+                                    color: 'white',
+                                    title: {
+                                        text: 'Degrees (F)'
+                                    }
                                 },
-                                width: 1650,
-                                title: "Temperatures"
+                                xaxis: {
+                                    color: 'white'
+                                },
+                                width: parentRef.current.offsetWidth,
+                                title: {
+                                    text: "Temperatures",
+                                    font: {
+                                        color: 'white'
+                                    }
+                                },
+                                paper_bgcolor: "transparent",
+                                plot_bgcolor: "transparent"
                             }
                         }
                         
@@ -159,23 +175,37 @@ const SensorData = () => {
                             y: humidityData,
                             type: 'scatter',
                             mode: 'lines',
-                            marker: {color: 'red'},
+                            marker: {color: 'white'},
                         }
                         ]}
                         layout={
                             {
                                 yaxis: {
                                     autorange: true,
-                                    type: 'linear'
+                                    type: 'linear',
+                                    color: 'white',
+                                    title: {
+                                        text: 'Humidity (%)'
+                                    }
                                 },
-                                width: 1650,
-                                title: "Humidity"
+                                xaxis: {
+                                    color: 'white'
+                                },
+                                width: parentRef.current.offsetWidth,
+                                title: {
+                                    text: "Humidity",
+                                    font: {
+                                        color: 'white'
+                                    }
+                                },
+                                paper_bgcolor: "transparent",
+                                plot_bgcolor: "transparent"
                             }
                         }
                         
                     />
                 </div>
-                <div className="chart-wrapper">
+                {/* <div className="chart-wrapper">
                     <Plot data={[
                         {
                             x: dates,
@@ -191,13 +221,13 @@ const SensorData = () => {
                                     range: [3, 5],
                                     type: 'linear'
                                 },
-                                width: 1650,
+                                width: parentRef.current.offsetWidth,
                                 title: "Battery Level"
                             }
                         }
                         
                     />
-                </div>
+                </div> */}
 
         </React.Fragment>)
     }
@@ -208,7 +238,7 @@ const SensorData = () => {
             <div className="section-header">
                 <div className="section-title-wrapper">{sensor.name} Data</div>
             </div>
-            <div className="section-content col charts-wrapper">
+            <div className="section-content col charts-wrapper" ref= { parentRef }>
 
                 { (sensorData.length > 0) ? displayCharts() : "" }
 

@@ -10,7 +10,7 @@ const SensorCard = (props) => {
 
     return (
 
-        <div className={(props.sensor._id === selectedSensor) ? "sensor-card-wrapper card-selected" : "sensor-card-wrapper"} onClick={ () => updateSelectedSensor(props.sensor._id) }>
+        <div className={(props.sensor._id === selectedSensor) ? "sensor-card-wrapper card-selected light-border" : "sensor-card-wrapper light-border"} onClick={ () => updateSelectedSensor(props.sensor._id) }>
             <div className="image-wrapper">
                 <div className="card-image"></div>
             </div>
